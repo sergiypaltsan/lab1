@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>My super cool best ever site</title>
+    </head>
+    <body>
+        <script>
+            function calc(form){
+                let k = parseFloat(document.getElementById("a").value);
+                let t = parseFloat(document.getElementById("b").value);
+                let result_w = ((t*t) + 3*k * Math.cos(t - 2) / (2 + Math.sqrt(1 + k*t))) / - Math.abs(k - t);
+                let result_s = Math.log(k - 4*t) + Math.exp(2*k) - t;
+                document.getElementById("result_w").value = result_w;
+                document.getElementById("result_s").value = result_s;
+            }
+        </script>
+        Hello , 418!
+        <form>
+            k<input type="text" id=a name=a> <br>
+            t<input type="text" id=b name=b> <br>
+            <input type="button" id="button" name="button" value="Click me" onclick="calc()"> <br>
+            rezult W =<input type="text" id=result_w name="result"> <br>
+            rezult S =<input type="text" id=result_s name="result"> <br>
+        </form>
+    </body>
+</html>
