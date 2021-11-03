@@ -1,0 +1,15 @@
+.shadowbox {
+    text-align: left;
+    margin-top: 20%;
+    width: fit-content;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: rgb(122, 144, 243);
+    padding: 2px;
+  }
+
+  .inputField{
+    margin: 1;
+    padding: 2px;
+    font-size: 8pt;
+  }
