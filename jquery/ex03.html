@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+	<script>
+	let first_time = true; // ;)
+
+	$(function() {
+		$("button").on("click",function(e) {
+			if( first_time == true ){
+				first_time = false;	
+				$("li>span.tag").each(function(i,v) {
+				$(v).html(((parseInt($(v).text()))*0.85).toFixed(2)+" $").
+				removeClass("tag-primary").addClass("tag-danger");
+				});
+
+				$("#testID").text("Поспіши!");
+				$("button").removeClass("btn-success").addClass("btn-info");
+				$("button").text("Знижки вже відображено");
+			}
+		});
+	})
+	</script>
+	<style>
+		.tag {
+			margin-left: 5px;
+			margin-right: 5px;
+			font-size: 12pt;
+		}
+		
+		li {
+			font-size: 16pt;
+		}
+		
+		button.btn {
+			font-size: 22pt;
+			margin: 30px;
+		}
+		
+		h1 > .tag  {
+			vertical-align: middle !important;
+		}
+	</style>
+	
+</head>
+<body>
+    <div class="container">
+		<div class="row">
+		
+			<div class="col-md-12 text-md-center">
+				<h1 class="display-1">Смартфони++ <span class="tag tag-pill tag-danger" id="testID">Є знижки!</span></h1>
+				<button class="btn btn-success btn-lg">
+					<i class="fa fa-percent" aria-hidden="true"></i>
+					Показати знижки! 
+				</button>
+				
+			</div>
+
+
+			<div class="col-md-6 offset-md-3">
+				<ul>
+					<li class="list-group-item">
+						iPhone 8
+						<span class="tag tag-primary tag-pill pull-xs-right">899 $</span>
+					</li>
+					<li class="list-group-item">
+						iPhone 7
+						<span class="tag tag-primary tag-pill pull-xs-right">799 $</span>
+					</li>
+					<li class="list-group-item">
+						Apple iPhone 6
+						<span class="tag tag-primary tag-pill pull-xs-right">199 $</span>
+					</li>
+					<li class="list-group-item">
+						Samsung Galaxy S9
+						<span class="tag tag-primary tag-pill pull-xs-right">650 $</span>
+					</li>
+					<li class="list-group-item">
+						Nokia 3310
+						<span class="tag tag-primary tag-pill pull-xs-right">99 $</span>
+					</li>
+					<li class="list-group-item">
+						HTC Two M3
+						<span class="tag tag-primary tag-pill pull-xs-right">433 $</span>
+					</li>
+					<li class="list-group-item">
+						Lenovo H6000
+						<span class="tag tag-primary tag-pill pull-xs-right">250 $</span>
+					</li>
+					<li class="list-group-item">
+						Microsoft Lumia 
+						<span class="tag tag-primary tag-pill pull-xs-right">195 $</span>
+					</li>
+					<li class="list-group-item">
+						Xiomi Redmi 9t Gold
+						<span class="tag tag-primary tag-pill pull-xs-right">999 $</span>
+					</li>					
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>
