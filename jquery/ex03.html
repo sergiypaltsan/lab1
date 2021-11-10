@@ -17,7 +17,7 @@
 			if( first_time == true ){
 				first_time = false;	
 				$("li>span.tag").each(function(i,v) {
-					$(v).html(((parseInt($(v).text()))*0.85).toFixed(2)+" $").
+					$(v).html(((parseFloat($(v).text()))*0.85).toFixed(2)+" $").
 					removeClass("tag-primary").addClass("tag-danger");
 				});
 
@@ -26,7 +26,7 @@
 			} else if( first_time == false ){
 				first_time = true;
 				$("li>span.tag").each(function(i,v) {
-					$(v).html(((parseInt($(v).text()))/0.85).toFixed(2)+" $").
+					$(v).html(((parseFloat($(v).text()))/0.85).toFixed(2)+" $").
 					removeClass("tag-danger").addClass("tag-primary");
 				});
 				$("button").removeClass("btn-info").addClass("btn-success");
