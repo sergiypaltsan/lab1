@@ -1,6 +1,6 @@
 // main
     window.addEventListener("resize", resizeHandler); // add event handler for resize of "window" object
-    setInterval(repaintHandler, 15); // set timer to repaintHandler, every 15 ms
+    setInterval(repaintHandler, 0); // set timer to repaintHandler, every 15 ms
 
 //-----------------------------------------------------------------------------------------
 /* 

@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>My super cool best ever site</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <script>
+            function calc(form){
+                let k = parseFloat($("#height").val());
+                let sex = document.getElementsByName('sex');
+                $.ajax({
+                    type:'POST',
+                    url:'a3.php',
+                    data:"height="+k+"&sex="+ (sex[0].checked ? "man" :"neman"),
+                    success:function(data){
+                        $("#result_w").val(data);
+                    }
+                });
+            }
+        </script>
+        <center>
+        <div class="shadowbox">
+            </br>
+            <form>
+                <div class="container">
+                    <h6>Ваша стать:</h2>
+                    <div class="row">
+                        <div class="col-sm">
+                            Male <input type="radio" id="contactChoice1"name="sex" value="man" checked>
+                        </div>
+                        <div class="col-sm">
+                            Female <input type="radio" id="contactChoice2"name="sex" value="neman">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm">
+                            <h6>Ріст</h6>
+                        </div>
+                        <div class="col-sm">
+                           <input type="text" id="height" name="result" class="inputField"> 
+                        </div>
+                    </div>
+                </div>
+                <center>
+                </br>
+                    <input type="button" id="button" name="button" value="Click me" onclick="calc()" style="margin: 10px; width: 70%;"> <br>
+                </br>
+                </center>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            Ідеальна вага
+                        </div>
+                        <div class="col-sm">
+                            <input type="text" id="result_w" name="result" class="inputField"> 
+                        </div>
+                    </div>
+                </br>
+                </div>    
+            </form>
+        </div>
+    </center>
+    </body>
+</html>
